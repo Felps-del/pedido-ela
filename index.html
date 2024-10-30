@@ -13,35 +13,40 @@
             font-family: Arial, sans-serif;
             text-align: center;
             background-color: #fbe7c6;
-            margin: 0; /* Remove a margem */
+            margin: 0;
+            overflow: hidden; /* Evita rolagem da página */
         }
         h1 {
-            font-size: 24px; /* Tamanho menor para o título */
+            font-size: 24px;
         }
         button {
-            margin: 5px; /* Margem menor entre os botões */
-            padding: 10px 20px; /* Botões menores */
-            font-size: 16px; /* Texto menor nos botões */
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
             cursor: pointer;
+            position: relative; /* Define posição relativa para melhor controle */
         }
     </style>
 </head>
 <body>
-    <h1>Vamos Urinar?</h1>
+    <h1>Quer namorar comigo?</h1>
     <button id="sim">Sim ❤️</button>
     <button id="nao">Não 😢</button>
 
     <script>
         document.getElementById('nao').addEventListener('mouseover', function() {
             const naoButton = document.getElementById('nao');
-            naoButton.style.position = 'absolute';
-            naoButton.style.top = Math.random() * (window.innerHeight / 2) + 'px'; /* Área de movimentação menor */
-            naoButton.style.left = Math.random() * window.innerWidth + 'px';
+            const maxTop = window.innerHeight * 0.5 - naoButton.offsetHeight; // Define limite para top
+            const maxLeft = window.innerWidth - naoButton.offsetWidth; // Define limite para left
+
+            // Define novas posições dentro dos limites da janela
+            naoButton.style.top = Math.random() * maxTop + 'px';
+            naoButton.style.left = Math.random() * maxLeft + 'px';
         });
 
         document.getElementById('sim').addEventListener('click', function() {
             alert('Eu sabia que você diria SIM! 💖');
-            window.location.href = 'https://www.youtube.com/watch?v=AwxsERbMsas';
+            window.location.href = 'https://www.youtube.com/watch?v=seu_video_aqui';
         });
     </script>
 </body>
