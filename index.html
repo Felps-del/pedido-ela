@@ -9,15 +9,19 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            height: 50vh; /* Altura menor */
             font-family: Arial, sans-serif;
             text-align: center;
             background-color: #fbe7c6;
+            margin: 0; /* Remove a margem */
+        }
+        h1 {
+            font-size: 24px; /* Tamanho menor para o título */
         }
         button {
-            margin: 10px;
-            padding: 15px 30px;
-            font-size: 18px;
+            margin: 5px; /* Margem menor entre os botões */
+            padding: 10px 20px; /* Botões menores */
+            font-size: 16px; /* Texto menor nos botões */
             cursor: pointer;
         }
     </style>
@@ -31,13 +35,13 @@
         document.getElementById('nao').addEventListener('mouseover', function() {
             const naoButton = document.getElementById('nao');
             naoButton.style.position = 'absolute';
-            naoButton.style.top = Math.random() * window.innerHeight + 'px';
+            naoButton.style.top = Math.random() * (window.innerHeight / 2) + 'px'; /* Área de movimentação menor */
             naoButton.style.left = Math.random() * window.innerWidth + 'px';
         });
 
         document.getElementById('sim').addEventListener('click', function() {
             alert('Eu sabia que você diria SIM! 💖');
-            window.location.href = 'https://www.youtube.com/watch?v=MPco35XPHGY';
+            window.location.href = 'https://www.youtube.com/watch?v=seu_video_aqui';
         });
     </script>
 </body>
